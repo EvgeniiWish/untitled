@@ -1,0 +1,65 @@
+Разработка системы для управления транспортными средствами,
+включая мониторинг их состояния, расписание рейсов и обслуживание.
+
+Абстрактные Классы:
+AbstractVehicle:
+Методы:
+addToFleet(Vehicle[] vehicles): Добавление транспортного средства в парк.
+removeFromFleet(Vehicle[] vehicles): Удаление транспортного средства из парка.
+
+AbstractMaintenance:
+Методы:
+scheduleMaintenance(Vehicle[] vehicles): Планирование техобслуживания.
+recordMaintenance(Vehicle[] vehicles, MaintenanceRecord record): Запись данных о техобслуживании.
+
+Интерфейсы:
+IFleetManagement:
+Методы:
+trackVehicleUsage(Vehicle[] vehicles): Отслеживание использования транспортного средства.
+calculateFuelEfficiency(Vehicle[] vehicles): Расчет топливной эффективности.
+
+IRoutePlanning:
+Методы:
+planRoute(Route route): Планирование маршрута.
+modifyRoute(Route route): Изменение маршрута.
+
+Классы:
+Bus (наследует AbstractVehicle):
+Методы:
+calculatePassengerLoad(Vehicle[] vehicles): Расчет загрузки пассажиров.
+updateRoute(Vehicle[] vehicles, Route newRoute): Обновление маршрута.
+
+Truck (наследует AbstractVehicle):
+Методы:
+calculateCargoCapacity(Vehicle[] vehicles): Расчет грузоподъемности.
+listAvailableTrucks(Vehicle[] vehicles): Список доступных грузовиков.
+
+VehicleFleet (реализует IFleetManagement):
+Методы:
+listActiveVehicles(Vehicle[] vehicles): Список активных транспортных средств.
+decommissionVehicle(Vehicle[] vehicles): Вывод из эксплуатации транспортного средства.
+
+MaintenanceSchedule (наследует AbstractMaintenance):
+Методы:
+listUpcomingMaintenances(Vehicle[] vehicles): Список предстоящих техобслуживаний.
+cancelMaintenance(Vehicle[] vehicles, MaintenanceRecord record): Отмена техобслуживания.
+
+RoutePlanner (реализует IRoutePlanning):
+Методы:
+findShortestRoute(Route[] routes): Поиск кратчайшего маршрута.
+adjustRoutesForTraffic(Route[] routes): Корректировка маршрутов под условия дорожного движения.
+
+Taxi (наследует AbstractVehicle):
+Методы:
+calculateFare(Vehicle[] vehicles, Journey journey): Расчет стоимости поездки.
+updateAvailabilityStatus(Vehicle[] vehicles, boolean available): Обновление статуса доступности.
+
+VehicleAnalytics (реализует IFleetManagement):
+Методы:
+analyzeFuelConsumption(Vehicle[] vehicles): Анализ расхода топлива.
+generateUsageReport(Vehicle[] vehicles): Создание отчета об использовании.
+
+EmergencyVehicle (наследует AbstractVehicle):
+Методы:
+activateEmergencyMode(Vehicle[] vehicles): Активация режима экстренной помощи.
+scheduleEmergencyDrills(Vehicle[] vehicles): Планирование учений по экстренной помощи.

@@ -1,7 +1,13 @@
-package org.example._2023_12_12.tE;
+package org.example._2023_12_12;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.math.BigDecimal;
-
+@Getter
+@Setter
+@AllArgsConstructor
 public class Account {
     private String accountNumber;
     private Country country;
@@ -23,17 +29,24 @@ class Empl {
     private String surName;
     private Account[] account;
 
-    private Citezeship citizenship;
+    private Citezenship citizenship;
 }
 
 enum Country {
-
+    GERMANY,
+    CANADA,
+    ISRAEL
 }
+
 
 enum Currency {
-
+    EURO,
+    DOLLAR,
+    SHEKEL
 }
 
-enum Citezeship {
-
+enum Citezenship {
+    GERMANY,
+    CANADA,
+    ISRAEL
 }
